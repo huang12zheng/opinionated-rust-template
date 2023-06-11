@@ -24,7 +24,7 @@ pub static CONFIG: Lazy<Config> = Lazy::new(|| envy::from_env().expect("some env
 
 #[cfg(test)]
 mod tests {
-    use pretty_assertions::assert_eq;
+    use insta::assert_debug_snapshot;
 
     use super::Config;
 
@@ -34,10 +34,6 @@ mod tests {
             example_bool: true,
             example_list: vec!["one".to_owned(), "two".to_owned(), "three".to_owned()],
         };
-        assert_eq!(config.example_bool, true);
-        assert_eq!(
-            config.example_list,
-            vec!["one".to_owned(), "two".to_owned(), "three".to_owned()]
-        );
+        assert_debug_snapshot!(config);
     }
 }
