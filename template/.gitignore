@@ -3,5 +3,5 @@
 .vs
 .vscode
 
-target
+**/target/**
 {% if crate_type == "lib" %}Cargo.lock{% endif %}

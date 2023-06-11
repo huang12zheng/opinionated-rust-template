@@ -3,11 +3,11 @@ name = "{{project-name}}"
 version = "0.1.0"
 authors = ["{{authors}}"]
 edition = "2021"
-rust-version = "1.56.0"
+rust-version = "1.70.0"
 description = ""
 # documentation = ""
 # homepage = ""
-repository = ""{% if license == "mit" %}
+repository = "https://github.com/huang12zheng/{{project-name}}"{% if license == "mit" %}
 license = "MIT"{% endif %}{% if license == "apache" %}
 license = "Apache-2.0"{% endif %}{% if license == "both" %}
 license = "MIT OR Apache-2.0"{% endif %}{% if license == "none" %}
@@ -15,7 +15,10 @@ license = ""{% endif %}
 keywords = ["{{project-name}}"]
 # categories = []
 
-publish = false # no accidents while in dev
+publish = true # no accidents while in dev
+
+[workspace]
+members = ["crates/*"]
 
 [features]
 default = []
