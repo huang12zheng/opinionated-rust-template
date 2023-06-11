@@ -1,10 +1,10 @@
-[package]
+[workspace.package]
 name = "{{project-name}}"
 version = "0.1.0"
 authors = ["{{authors}}"]
 edition = "2021"
 rust-version = "1.70.0"
-description = ""
+description = "{{description}}"
 # documentation = ""
 # homepage = ""
 repository = "https://github.com/huang12zheng/{{project-name}}"{% if license == "mit" %}
